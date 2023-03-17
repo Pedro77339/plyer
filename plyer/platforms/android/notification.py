@@ -151,7 +151,7 @@ class AndroidNotification(Notification):
 
         # get our application Activity
         pending_intent = PendingIntent.getActivity(
-            app_context, 0, notification_intent, 0
+            app_context, 0, notification_intent, PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT
         )
 
         notification.setContentIntent(pending_intent)
